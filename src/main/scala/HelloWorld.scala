@@ -1,7 +1,15 @@
 object HelloWorld {
   def main(args: Array[String]): Unit = {
-    for(a: Int <- 1 to 1000; b: Int <- 1 to 1000; c: Int <- 1 to 1000 if (a * a == b * b + c * c)){
-      println("a = " + a + " b = " + b + " c = " + c)
+    import java.util.Locale
+
+    val obj: AnyRef = "String Literal"
+    // obj: AnyRef = "String Literal"
+
+    obj match {
+      case v:java.lang.Integer =>
+        println("Integer!")
+      case v:String =>
+        println(v.toUpperCase(Locale.ENGLISH))
     }
   }
 }
